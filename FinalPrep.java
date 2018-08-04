@@ -73,24 +73,24 @@ public class FinalPrep extends JFrame
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.DARK_GRAY);
-		contentPane.add(panel, BorderLayout.NORTH);
+		JPanel pnlTop = new JPanel();
+		pnlTop.setBackground(Color.DARK_GRAY);
+		contentPane.add(pnlTop, BorderLayout.NORTH);
 		
 		JCheckBox chckbxRunMultipleFlips = new JCheckBox("Run Multiple Flips");
 		chckbxRunMultipleFlips.setFont(new Font("Tahoma", Font.BOLD, 15));
 		chckbxRunMultipleFlips.setForeground(Color.WHITE);
-		panel.add(chckbxRunMultipleFlips);
+		pnlTop.add(chckbxRunMultipleFlips);
 		
 		textField = new JTextField();
 		textField.setText("10");
 		textField.setEnabled(false);
-		panel.add(textField);
+		pnlTop.add(textField);
 		textField.setColumns(10);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.DARK_GRAY);
-		contentPane.add(panel_1, BorderLayout.SOUTH);
+		JPanel pnlImage = new JPanel();
+		pnlImage.setBackground(Color.DARK_GRAY);
+		contentPane.add(pnlImage, BorderLayout.SOUTH);
 		
 		JLabel lblHeads = new JLabel("Heads: ");
 		lblHeads.setHorizontalAlignment(SwingConstants.LEFT);
@@ -99,12 +99,12 @@ public class FinalPrep extends JFrame
 		lblHeads.setOpaque(true);
 		lblHeads.setForeground(Color.WHITE);
 		lblHeads.setBackground(Color.DARK_GRAY);
-		panel_1.add(lblHeads);
+		pnlImage.add(lblHeads);
 		
 		textField_1 = new JTextField();
 		textField_1.setEditable(false);
 		textField_1.setBorder(new LineBorder(new Color(64, 64, 64), 2));
-		panel_1.add(textField_1);
+		pnlImage.add(textField_1);
 		textField_1.setColumns(10);
 		
 		JLabel lblTails = new JLabel("Tails: ");
@@ -113,12 +113,12 @@ public class FinalPrep extends JFrame
 		lblTails.setBackground(Color.DARK_GRAY);
 		lblTails.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblTails.setForeground(Color.WHITE);
-		panel_1.add(lblTails);
+		pnlImage.add(lblTails);
 		
 		textField_2 = new JTextField();
 		textField_2.setEditable(false);
 		textField_2.setBorder(new LineBorder(new Color(64, 64, 64), 2));
-		panel_1.add(textField_2);
+		pnlImage.add(textField_2);
 		textField_2.setColumns(10);
 		
 		JButton btnFlip = new JButton("Flip");
@@ -126,21 +126,21 @@ public class FinalPrep extends JFrame
 		btnFlip.setBorder(new EmptyBorder(5, 12, 5, 12));
 		btnFlip.setOpaque(true);
 		btnFlip.setFont(new Font("Tahoma", Font.BOLD, 13));
-		panel_1.add(btnFlip);
+		pnlImage.add(btnFlip);
 		
 		JButton btnReset = new JButton("Reset");
 		btnReset.setHorizontalTextPosition(SwingConstants.CENTER);
 		btnReset.setBorder(new EmptyBorder(5, 5, 5, 5));
 		btnReset.setOpaque(true);
 		btnReset.setFont(new Font("Tahoma", Font.BOLD, 13));
-		panel_1.add(btnReset);
+		pnlImage.add(btnReset);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon(FinalPrep.class.getResource("/finalPrep/question.png")));
-		lblNewLabel.setOpaque(true);
-		lblNewLabel.setBackground(Color.WHITE);
-		contentPane.add(lblNewLabel, BorderLayout.CENTER);
+		JLabel lblCoins = new JLabel("");
+		lblCoins.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCoins.setIcon(new ImageIcon(FinalPrep.class.getResource("/finalPrep/question.png")));
+		lblCoins.setOpaque(true);
+		lblCoins.setBackground(Color.WHITE);
+		contentPane.add(lblCoins, BorderLayout.CENTER);
 		
 		chckbxRunMultipleFlips.addItemListener(new ItemListener() 
 		{
@@ -149,11 +149,11 @@ public class FinalPrep extends JFrame
 				if(chckbxRunMultipleFlips.isSelected())
 				{
 					textField.setEnabled(true);
-					lblNewLabel.setIcon(new ImageIcon(FinalPrep.class.getResource("/finalPrep/heads-tails.png")));
+					lblCoins.setIcon(new ImageIcon(FinalPrep.class.getResource("/finalPrep/heads-tails.png")));
 				} else
 					{
 						textField.setEnabled(false);
-						lblNewLabel.setIcon(new ImageIcon(FinalPrep.class.getResource("/finalPrep/question.png")));
+						lblCoins.setIcon(new ImageIcon(FinalPrep.class.getResource("/finalPrep/question.png")));
 					}
 			}
 		});
@@ -192,13 +192,13 @@ public class FinalPrep extends JFrame
 						if(flip == 0) 
 						{
 							heads++;
-							lblNewLabel.setIcon(new ImageIcon(CoinFlipper.class.getResource("/finalPrep/heads.png")));
+							lblCoins.setIcon(new ImageIcon(CoinFlipper.class.getResource("/finalPrep/heads.png")));
 							textField_1.setText(String.valueOf(heads));					
 						}
 						if(flip == 1) 
 						{
 							tails++;
-							lblNewLabel.setIcon(new ImageIcon(CoinFlipper.class.getResource("/finalPrep/tails.png")));
+							lblCoins.setIcon(new ImageIcon(CoinFlipper.class.getResource("/finalPrep/tails.png")));
 							textField_2.setText(String.valueOf(tails));
 						}
 					}
@@ -212,7 +212,7 @@ public class FinalPrep extends JFrame
 				chckbxRunMultipleFlips.setSelected(false);
 				textField.setEnabled(false);
 				textField.setText("10");
-				lblNewLabel.setIcon(new ImageIcon(FinalPrep.class.getResource("/finalPrep/question.png")));
+				lblCoins.setIcon(new ImageIcon(FinalPrep.class.getResource("/finalPrep/question.png")));
 				textField_1.setText("");
 				textField_2.setText("");
 				heads = 0;
