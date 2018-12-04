@@ -1,0 +1,63 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 560px;
+  display: block;
+  margin: auto;
+  width: 50%;
+  border: solid 5px black;
+}
+
+.top-bar,
+.bottom-bar {
+  background-color: rgb(56, 54, 54);
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.checkbox {
+  padding: 5px;
+  margin-left: 50px;
+  font-size: 25px;
+  float: left;
+}
+.text-box {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+input[type="text"] {
+  font-size: 15px;
+}
+
+img {
+  padding: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.heads {
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.tails {
+  float: left;
+  margin-right: 7px;
+  margin-top: 5px;
+}
+
+button {
+  background-color: lightgray;
+  font-size: 20px;
+  padding: 3px;
+}
