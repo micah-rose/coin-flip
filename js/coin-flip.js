@@ -49,7 +49,6 @@ function resetFlips(){
     document.getElementById("tails-box").value = "";
     document.getElementById("chkbx").checked = false;
     document.getElementById("multi-flip").value = "10";
-    document.getElementById("multi-flip").readOnly = true;
     heads = 0;
     tails = 0;
 }
