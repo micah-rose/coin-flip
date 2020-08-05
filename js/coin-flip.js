@@ -30,12 +30,12 @@ function flipCoin(){
     }else {
         if(rand == 1){
             heads++;
-            document.getElementById("coin-image").src = "/img/heads.png";
+            document.getElementById("coin-image").src = "img/heads.png";
             document.getElementById("heads-box").value = heads;
         }
         else if(rand == 2){
             tails++;
-            document.getElementById("coin-image").src = "/img/tails.png";
+            document.getElementById("coin-image").src = "img/tails.png";
             document.getElementById("tails-box").value = tails;
         }
     }
@@ -44,7 +44,7 @@ function flipCoin(){
 //Functionality for 'Reset' button
 function resetFlips(){ 
     document.getElementById("multi-flip").readOnly = true;
-    document.getElementById("coin-image").src = "/img/question.png";
+    document.getElementById("coin-image").src = "img/question.png";
     document.getElementById("heads-box").value = "";
     document.getElementById("tails-box").value = "";
     document.getElementById("chkbx").checked = false;
@@ -58,11 +58,11 @@ function multiFlips(){
     checkbox = document.getElementById("chkbx");
     if(checkbox.checked){
         document.getElementById("multi-flip").readOnly = false;
-        document.getElementById("coin-image").src = "/img/heads-tails.png";
+        document.getElementById("coin-image").src = "img/heads-tails.png";
         console.log("Checked!!");
     } else {
         document.getElementById("multi-flip").readOnly = true;
-        document.getElementById("coin-image").src = "/img/question.png";
+        document.getElementById("coin-image").src = "img/question.png";
         console.log("Not checked!!");
     }
 }
